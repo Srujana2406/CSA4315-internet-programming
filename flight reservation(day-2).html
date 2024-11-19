@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Flight Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #005bb5;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Flight Reservation System</h1>
+    </header>
+    <nav>
+        <a href="search-flight.html">Search Flight</a>
+        <a href="book-ticket.html">Book Ticket</a>
+        <a href="my-ticket.html">My Ticket</a>
+        <a href="cancel-ticket.html">Cancel Ticket</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="container">
+        <h2>Search for Flights</h2>
+        <form action="search-results.html" method="GET">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+
+            <label for="departure-date">Departure Date:</label>
+            <input type="date" id="departure-date" name="departure_date" required>
+
+            <label for="class">Class:</label>
+            <select id="class" name="class" required>
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First Class</option>
+            </select>
+
+            <button type="submit">Search Flights</button>
+        </form>
+    </div>
+    <footer>
+        <p style="text-align: center; padding: 1rem; color: #555;">&copy; 2024 Online Flight Reservation System</p>
+    </footer>
+</body>
+</html>

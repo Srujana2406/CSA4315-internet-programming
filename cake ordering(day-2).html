@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cake Ordering System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #e91e63;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 1rem;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #d81b60;
+        }
+
+        .total-price {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Online Cake Ordering</h1>
+        <form id="orderForm">
+            <label for="flavor">Select Cake Flavor:</label>
+            <select id="flavor" required>
+                <option value="" disabled selected>Choose a flavor</option>
+                <option value="500">Chocolate ($500)</option>
+                <option value="400">Vanilla ($400)</option>
+                <option value="450">Strawberry ($450)</option>
+                <option value="550">Red Velvet ($550)</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" placeholder="Enter quantity" required>
+
+            <button type="button" class="btn" onclick="calculateTotal()">Place Order</button>
+        </form>
+
+        <div id="output" class="total-price"></div>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            const flavor = document.getElementById('flavor').value;
+            const quantity = document.getElementById('quantity').value;
+
+            if (!flavor || quantity <= 0) {
+                alert('Please select a flavor and enter a valid quantity!');
+                return;
+            }
+
+            const total = flavor * quantity;
+
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = Your total order price is: <strong>$${total}</strong>;
+        }
+    </script>
+
+</body>
+</html>
